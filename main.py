@@ -1,5 +1,6 @@
 import string
 from collections import defaultdict
+
 def sorting_function(lines):
     # Liczba dokumentów
     num_documents = int(lines[0])
@@ -35,13 +36,14 @@ def sorting_function(lines):
         sorted_doc_ids = [doc_id for doc_id, _ in sorted_docs]
         results.append(sorted_doc_ids)
 
-    # Wyświetlanie wyników
+    # Wyświetlanie wyników w odpowiednim formacie
     for result in results:
         print(result)
 
 # Odczytywanie zawartości pliku "input.txt"
-with open('input2.txt', 'r') as file:
-    input_data = file.read()
+if __name__ == "__main__":
+    import sys
+    input_data = sys.stdin.read()
 
-lines = input_data.strip().split('\n')
-sorting_function(lines)
+    lines = input_data.strip().split('\n')
+    sorting_function(lines)
